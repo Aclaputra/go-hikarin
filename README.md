@@ -18,7 +18,7 @@ The JSON script format is exported from the [Iteranya/hikarin-framework](https:/
 
 ## 📦 Installation
 ```bash
-go get github.com/aclaputra/visualnovel/vnlib
+go get github.com/aclaputra/go-hikarin
 ```
 
 ## 📂 Folder Structure
