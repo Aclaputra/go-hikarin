@@ -1,10 +1,27 @@
-package visual_novel
+package hikarin
 
 import (
 	"encoding/json"
 	"io"
+	"log"
 	"os"
 )
+
+// Extract using raw original data structure of hikarin framework
+func ExtractRaw(path string) (rawItems []json.RawMessage, err error) {
+	var bytesData []byte
+	bytesData, err = os.ReadFile(path)
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+	if err = json.Unmarshal(bytesData, &rawItems); err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	return
+}
 
 func ExtractFromFile(path string) ([]ScriptEntry, error) {
 	data, err := os.ReadFile(path)

@@ -1,6 +1,8 @@
-package visual_novel
+package hikarin
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func CheckValid(script []ScriptEntry) {
 	for _, entry := range script {

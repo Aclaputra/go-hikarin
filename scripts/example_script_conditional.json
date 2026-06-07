@@ -1,0 +1,156 @@
+[
+    {
+        "type": "meta",
+        "action": "create_global",
+        "var": "conductor_relationship_point",
+        "init": 0,
+        "id": 0
+    },
+    {
+        "type": "meta",
+        "action": "start",
+        "id": 1
+    },
+    {
+        "type": "label",
+        "action": "label",
+        "label": "start_label",
+        "id": 2
+    },
+    {
+        "type": "show_sprite",
+        "action": "show",
+        "sprite": "conductor",
+        "location": "characters/conductor/default/agnes_004.jpg",
+        "dyn_location": "characters/conductor/default/agnes_004.jpg",
+        "position": "CUSTOM",
+        "wRatio": 16,
+        "hRatio": 9,
+        "wFrameRatio": 4,
+        "hFrameRatio": 4,
+        "column": 2,
+        "row": 2,
+        "id": 3
+    },
+    {
+        "type": "dialogue",
+        "action": "say",
+        "label": "Conductor",
+        "content": "Evening again, miss. Same seat as always?",
+        "id": 4
+    },
+    {
+        "type": "modify_global",
+        "action": "increment_var",
+        "var": "conductor_relationship_point",
+        "value": 1,
+        "id": 5
+    },
+    {
+        "type": "remove_sprite",
+        "action": "remove_character",
+        "sprite": "conductor",
+        "id": 6
+    },
+    {
+        "type": "choice",
+        "action": "choice",
+        "choice": [
+            {
+                "label": "start_label",
+                "display": "Yes, repeat"
+            },
+            {
+                "label": "end_label",
+                "display": "No, continue"
+            },
+            {
+                "label": "finsih_label",
+                "display": "Skip Tutorial"
+            }
+        ],
+        "id": 7
+    },
+    {
+        "type": "label",
+        "action": "label",
+        "label": "end_label",
+        "id": 8
+    },
+    {
+        "type": "show_sprite",
+        "action": "show",
+        "sprite": "test",
+        "location": "characters/test/default/pfp_twilight.png",
+        "dyn_location": "characters/test/default/pfp_twilight.png",
+        "position": "CUSTOM",
+        "wRatio": 16,
+        "hRatio": 9,
+        "wFrameRatio": 4,
+        "hFrameRatio": 4,
+        "column": 12,
+        "row": 2,
+        "id": 9
+    },
+    {
+        "type": "dialogue",
+        "action": "say",
+        "label": "Emily",
+        "content": "Yeah routinity keep me sane as always",
+        "id": 10
+    },
+    {
+        "type": "remove_sprite",
+        "action": "remove_character",
+        "sprite": "test",
+        "id": 11
+    },
+    {
+        "type": "label",
+        "action": "label",
+        "label": "finsih_label",
+        "id": 12
+    },
+    {
+        "type": "conditional_global",
+        "action": "conditional",
+        "condition": "greater_than",
+        "var": "conductor_relationship_point",
+        "value": 1,
+        "actions": [
+            {
+                "type": "dialogue",
+                "action": "say",
+                "label": "",
+                "content": "You\u2019ve advanced further in your relationship with the Conductor.",
+                "id": 14
+            }
+        ],
+        "id": 13,
+        "end": 15
+    },
+    {
+        "type": "dialogue",
+        "action": "say",
+        "label": "",
+        "content": "You've advanced further in your relationship with the Conductor.",
+        "id": 14
+    },
+    {
+        "type": "game_action",
+        "actions": "scene_change",
+        "id": 15
+    },
+    {
+        "type": "meta",
+        "action": "start",
+        "id": 16
+    },
+    {
+        "type": "dialogue",
+        "action": "say",
+        "label": "Conductor",
+        "content": "You have finished the tutorial.",
+        "id": 17
+    }
+]
